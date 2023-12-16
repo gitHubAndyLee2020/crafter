@@ -1,13 +1,16 @@
 import setuptools
 import pathlib
 
+# Read the contents of your README file
+with open(pathlib.Path('README.md'), encoding='utf-8') as fh:
+    long_description = fh.read()
 
 setuptools.setup(
     name='crafter',
     version='1.8.3',
     description='Open world survival game for reinforcement learning.',
     url='http://github.com/danijar/crafter',
-    long_description=pathlib.Path('README.md').read_text(),
+    long_description=long_description,
     long_description_content_type='text/markdown',
     packages=['crafter'],
     package_data={'crafter': ['data.yaml', 'assets/*']},
